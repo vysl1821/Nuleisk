@@ -1,0 +1,260 @@
+!color_blue = "#1f2b3f"
+!color_light_blue = "#3d5980"
+!side_pane_width = 240px
+!shadow_white = "0 1px 0 white"
+!shadow_top_image = "url(/images/apps/shadow_top.png)"
+!shadow_bottom_image = "url(/images/apps/shadow_bottom.png)"
+
+=border_radius(!radius = 5px)
+  -moz-border-radius = !radius
+  -webkit-border-radius = !radius
+  -o-border-radius= !radius
+  -ms-border-radius= !radius
+  -khtml-border-radius= !radius
+  border-radius = !radius
+
+=border_radius_topright(!radius = 5px)
+  -moz-border-radius-topright = !radius
+  -webkit-border-top-right-radius = !radius
+  -o-border-top-right-radius = !radius
+  -ms-border-top-right-radius = !radius
+  -khtml-border-top-right-radius = !radius
+  border-top-right-radius = !radius
+
+=border_radius_topleft(!radius = 5px)
+  -moz-border-radius-topleft = !radius
+  -webkit-border-top-left-radius = !radius
+  -o-border-top-left-radius = !radius
+  -ms-border-top-left-radius = !radius
+  -khtml-border-top-left-radius = !radius
+  border-top-left-radius = !radius
+
+=border_radius_bottomright(!radius = 5px)
+  -moz-border-radius-bottomright = !radius
+  -webkit-border-bottom-right-radius = !radius
+  -o-border-bottom-right-radius = !radius
+  -ms-border-bottom-right-radius = !radius
+  -khtml-border-bottom-right-radius = !radius
+  border-bottom-right-radius = !radius
+
+=border_radius_bottomleft(!radius = 5px)
+  -moz-border-radius-bottomleft = !radius
+  -webkit-border-bottom-left-radius = !radius
+  -o-border-bottom-left-radius = !radius
+  -ms-border-bottom-left-radius = !radius
+  -khtml-border-bottom-left-radius = !radius
+  border-bottom-left-radius = !radius
+  
+=box_shadow(!shadow = "0px 0px 10px #000")
+  -moz-box-shadow= !shadow
+  -webkit-box-shadow= !shadow
+  -o-box-shadow= !shadow
+  box-shadow= !shadow
+  
+=box_shadow_custom(!hor = "0", !ver = "0", !width = "10px", !color = "#000", !inset = "")
+  !shadow = !hor !ver !width !color !inset
+  +box_shadow(!shadow)
+  
+=border
+  border-style: indent
+  border-width: 1px
+  border-color: #333
+
+=box_sizing(!sizing = "border-box")
+  -moz-box-sizing= !sizing
+  -webkit-box-sizing= !sizing
+  -ms-box-sizing= !sizing
+  box-sizing= !sizing
+
+=gradient(!from = #000, !to = #333)
+  background:
+    color= !to
+    image= "-webkit-gradient(linear, left top, left bottom, from(#{!from}), to(#{!to}))"
+    image= "-moz-linear-gradient(top,  #{!from},  #{!to})"
+    image= "#{!to} -o-linear-gradient(top,  #{!from},  #{!to})"
+  filter= "progid:DXImageTransform.Microsoft.gradient(startColorstr='#{!from}', endColorstr='#{!to}')"
+
+=image_frame
+  padding: 5px
+  border: solid 1px #EFEFEF
+  +box_shadow_custom("2px", "2px", "15px", "#ccc")
+
+=bar_shadow
+  padding-top: 10px
+  background:
+    image: url(/images/apps/shadow_top.png)
+    repeat: repeat-x
+ 
+=header_background
+  height: 22px
+  padding: 10px
+  background:
+    color: #e2e5e9
+  +bar_shadow
+  
+=buttongroups(!width)
+  background:
+    image: url("/images/toolbar/bg.png") 
+    repeat: repeat-x 
+  border-top: 0.1em solid #8a9096
+  border-bottom: 0.1em solid #8a9096
+  clear: both
+  text-align: center
+  background-color: #d0d4d9
+  padding: 10px 0 14px 0
+  a
+    font-size: 10px
+    width= !width
+    
+    
+=selector(!width = 200px)
+  width: auto
+  min-width= !width - 10px
+  span
+    width: auto
+    min-width= !width - 37px
+    padding: 0 33px 0 2px
+  select
+    width: auto
+    min-width= !width
+ 
+=glossy(!width = 128)
+  +border_radius(15px)
+  background-color: transparent
+  background-repeat: no-repeat
+  height= !width + "px"
+  width= !width + "px"
+
+  &.shadow
+    +box_shadow_custom("0", "3px", "6px", "rgba(0, 0, 0, 0.7)")
+
+  .image
+    background-image= url("/images/defaults/product_#{!width}.png")
+    /*+box_shadow_custom("0", "1px", "0px", "rgba(255, 255, 255, 0.5)", "inset")*/
+    +border_radius(15px)
+
+  .glossy
+    +border_radius(15px)
+    background-image= url("http://tools.w3clubs.com/mask/mask.php?x=#{!width}")
+
+  .glow
+    background-color: transparent
+    background-position: 0 0
+    background-repeat: no-repeat
+    !glow_width = 32
+    @if !width > 125
+      !glow_width= 150
+      top= - (296 - !width)/2 + "px"
+      left= - (296 - !width)/2 + "px"
+    @else if !width > 75
+      !glow_width= 100
+      top= - (160 - !width)/2 + "px"
+      left= - (160 - !width)/2 + "px"
+    @else
+      top= - (48 - !width)/2 + "px"
+      left= - (48 - !width)/2 + "px"
+    background-image: url("/images/common/glow_#{!glow_width}.png")
+
+=background_size(!size)
+  background-size= !size 
+  -moz-background-size= !size
+  -o-background-size= !size
+  -webkit-background-size= !size
+  -khtml-background-size= !size
+
+=background_clip(!type)
+  -moz-background-clip= !type
+  -webkit-background-clip= !type
+  -o-background-clip= !type+"-box"
+  -ms-background-clip= !type+"-box"
+  -khtml-background-clip= !type+"-box"
+  background-clip= !type+"-box"
+
+=background_origin(!type)
+  -moz-background-origin= !type
+  -webkit-background-origin= !type
+  -o-background-origin= !type+"-box"
+  -ms-background-origin= !type+"-box"
+  -khtml-background-origin= !type+"-box"
+  background-origin= !type+"-box"
+
+=custom_background(!color, !img, !_img, !pos, !_pos, !rep, !_rep, !bg_size, !_bg_size)
+  @if ( !img != '' ) 
+    !_img = !_img + "," + !img
+  @if  (!pos != '')  
+    !_pos = !_pos + "," + !pos
+  @if ( !rep != '' ) 
+    !_rep = !_rep + "," + !rep
+  @if ( !bg_size != '' ) 
+    !_bg_size = !_bg_size + "," + !bg_size
+  +background_size( !_bg_size )    
+  background:
+    image= !_img
+    position= !_pos
+    repeat= !_rep
+    color= !color
+
+
+=content_shadow(!color = "transparent", !img = "", !pos = "", !rep = "", !bg_size = "" )
+  !_img = "url(\"/images/apps/shadow_top.png\"), url(\"/images/apps/shadow_bottom.png\")"
+  !_pos = "left top, left bottom"
+  !_rep = "repeat-x, repeat-x"
+  !_bg_size = "1px 31px, 1px 31px"
+  +custom_background(!color, !img, !_img, !pos, !_pos, !rep, !_rep, !bg_size, !_bg_size)
+
+=content_shadow_top(!color = "transparent", !img = "", !pos = "", !rep = "", !bg_size = "" )
+  !_img = "url(\"/images/apps/shadow_top.png\")"
+  !_pos = "left top"
+  !_rep = "repeat-x"
+  !_bg_size = "1px 31px"
+  +custom_background(!color, !img, !_img, !pos, !_pos, !rep, !_rep, !bg_size, !_bg_size)
+
+=content_shadow_bottom(!color = "transparent", !img = "", !pos = "", !rep = "", !bg_size = "" )
+  !_img = "url(\"/images/apps/shadow_bottom.png\")"
+  !_pos = "left bottom"
+  !_rep = "repeat-x"
+  !_bg_size = "1px 31px"
+  +custom_background(!color, !img, !_img, !pos, !_pos, !rep, !_rep, !bg_size, !_bg_size)
+
+
+=user_select(!option = "none")
+  -moz-user-select= !option
+  -webkit-user-select= !option
+  user-select= !option
+  /*-o-user-select= !option*/
+  /*-ms-user-select= !option*/
+  /*-khtml-user-select= !option*/
+
+=inline_label
+  label
+    padding: 0
+    display: inline
+    float: none
+    padding: auto
+    color= !color_blue
+    font:
+      weight: bold
+ 
+=fieldsets_p
+  p
+    color= !color_blue
+    font-weight: bold
+    font-size: 14px
+    line-height: 40px
+    margin: 25px 0 0 13px
+    
+=form_row
+  .row
+    margin: 15px 0
+    padding: 5px 0
+    line-height: 27px
+
+
+=form_with_fieldset
+  text-align: left
+  padding-right: 2.5%
+  padding-left: 2.5%
+  +fieldsets_p
+  +inline_label
+  +form_row
+

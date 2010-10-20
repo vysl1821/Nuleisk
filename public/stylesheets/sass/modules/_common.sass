@@ -1,0 +1,150 @@
+.icon.large .image
+  background-image: url(/images/defaults/product_150.png)
+    
+.icon.medium .image
+  background-image: url(/images/defaults/product_100.png)
+    
+.icon.small .image
+  background-image: url(/images/defaults/product_32.png)
+  
+textarea
+  width: 634px
+  height: 140px
+  +box_shadow_custom("0", "2px", "3px", "rgba(0, 0, 0, 0.2)", "inset")
+  background-color: #fff
+  border: 1px solid #858E97
+  padding-top: 3px
+  padding-left: 6px
+
+.cell
+  min-height: 1px
+
+.inline_label
+  color: #999 !important
+  font-style: italic
+
+.layout 
+
+  div.padded
+    padding: 0
+
+  .bar
+
+    span.buttongroup
+      button, .button
+        min-width: 100px
+        width: auto
+    
+    .cell
+      button, .button
+        margin-right: 10px
+    
+      span.buttongroup
+        button, .button
+          margin-right: 0
+          margin-left: 0
+   
+    .cell:last-child, .cell.last_child
+      text-align: right
+      float: right
+
+      button, .button
+        margin-right: 0
+        margin-left: 10px
+
+    span.navigation
+
+      a.button, button
+        margin-right: 0
+        margin-left: 0
+
+      a.button, button
+        margin-right: 0
+        margin-left: 0
+
+    &.settings.custom
+      background-image: url('/images/common/bar_settings_custom.png')
+      line-height: 45px
+      height: 45px
+
+    &.category.custom
+      background-image: url('/images/common/bar_category_custom.png')
+      line-height: 47px
+      height: 47px
+
+
+    label
+      display: inline-block
+      text-shadow: 0 1px 0 white
+      margin: 0 5px 0 0
+      color= !color_blue
+
+    form
+      display: inline-block
+    
+
+  .row .cell.left
+    float: left
+
+  div.selector 
+    height: 26px
+
+    span
+      color: black
+      height: 26px
+
+  &.ui-dialog
+    min-width: 200px
+
+.split
+  .top, .bottom
+    padding: 0
+  
+    &.backgroundless
+      background: none
+
+.split_hor.row
+  overflow: hidden
+
+  .cell
+    overflow-y: auto
+    overflow-x: hidden
+
+.gradient
+  +gradient(#c9ced4, rgba(255, 255, 255, 0))
+
+.no_results
+  text-align: center
+  margin: 20px 0
+  font-size: 20px
+
+.no_results span
+  font-weight: bold
+
+.backgroundless
+  background: none
+  
+h1.center
+  text-align: center
+
+table
+  table-layout: auto
+
+/* scrollable */
+table.scrollable
+  position: static
+
+div.tablescroll
+  table
+    margin: 0
+
+  table.tablescroll_body
+    border: none
+
+    tbody tr:last-child td
+      border-bottom-width: 0
+
+.card
+  width: auto
+  min-width: 182px
+

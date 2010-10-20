@@ -1,0 +1,10 @@
+log/*
+tmp/*
+.sass-cache/*
+config/database.yml
+config/aws_s3.yml
+spec/spec.opts
+public/stylesheets/*.css
+.bundle
+config/environments/local_vars.rb
+*~
