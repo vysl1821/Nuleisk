@@ -8,6 +8,8 @@ merb_gems_version = "1.1.3"
 # Don't use json gem version lower than 1.1.7! Older versions has security bug!
 gem "json_pure", ">= 1.1.7", :require => "json"
 gem "merb-core", merb_gems_version
+gem "merb-assets", merb_gems_version
+gem "merb-helpers", merb_gems_version
 
 # Change to server of your choice
 gem "thin"

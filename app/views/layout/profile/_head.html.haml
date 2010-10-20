@@ -1,6 +1,6 @@
 %title NULEISK
-%link{ :rel => "shortcut icon", :href => "favicon.ico", :type => "image/x-icon" }/
-%link{ :rel => "icon", :href => "img/favicon_animated.gif", :type => "image/gif" }/
+%link{ :rel => "shortcut icon", :href => "/images/favicon.ico", :type => "image/x-icon" }/
+%link{ :rel => "icon", :href => "/images/favicon_animated.gif", :type => "image/gif" }/
 %meta{ :content => "text/html; charset=utf-8", "http-equiv" => "content-type" }/
 %meta{ :name => "description", :content => "Nuleisk, nusileisk, nuleisti, nusileisti, go down, slow down, zemelapis, zemelapiai, map, viskas apie nuleidimus" }/
 %meta{ :name => "keywords", :content => "Nuleisk, nusileisk, nuleisti, nusileisti, go down, slow down, zemelapis, zemelapiai, map, " }/
@@ -14,11 +14,10 @@
 %meta{ :name => "copyright", :content => "Vygantas Sliogeris" }/
 %meta{ :name => "author", :content => "Vygantas Sliogeris &amp; Google's Maps" }/
 
-%link{ :href => "/stylesheets/all.css", :rel => "stylesheet", :media => "screen", :type => "text/css", :charset => "utf-8" }/
+=css_include_tag "all" 
 
-%script{ :src => "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js", :charset => "utf-8", :type => "text/javascript" }/
-%script{ :src => "http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js", :charset => "utf-8", :type => "text/javascript" }/
-%script{ :src => "http://maps.google.com/maps/api/js?sensor=false", :charset => "utf-8", :type => "text/javascript" }/
-%script{ :src => "application", :charset => "utf-8", :type => "text/javascript" }/
-%script{ :src => "events", :charset => "utf-8", :type => "text/javascript" }/
-
+=js_include_tag("http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js")
+=js_include_tag("http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js")
+=js_include_tag("http://maps.google.com/maps/api/js?sensor=false")
+=js_include_tag("application")
+=js_include_tag("events")

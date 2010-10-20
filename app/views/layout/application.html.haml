@@ -3,5 +3,5 @@
   %head
     =partial ('layout/profile/head')
     =partial ('layout/profile/javascripts')
-  %body
-  = catch_content :for_layout
+  %body{ :style => "height:100%" }
+    = catch_content :for_layout

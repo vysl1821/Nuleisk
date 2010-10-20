@@ -1,0 +1,14 @@
+%div{:id=>'map'}
+  %div{:class=>'menu'}
+    %h1
+      Nuleisk LT
+    =link_to('Autoriaus blogas', "http://saviakas.blogspot.com/", :title=>"Vyganto blogas")
+    %br
+    =link_to('WEB sprendimai', "http://web.sliogeris.com/", :title=>"Vyganto: web sprendimai ir paslaugos")
+    %br
+    =link_to('E-partija', 'http://www.e-partija.lt', :title=>'E-Partija')
+  %div{:class=>"search"}
+    %div{:class=>"fixer"}
+      =text_field(:id=>'search_input', :value=>'Lithuania')
+    %div{:class=>"fixer"}
+      =button('S', :id=>'search', :type=>'button')
