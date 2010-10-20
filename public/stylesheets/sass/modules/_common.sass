@@ -6,15 +6,17 @@ fieldset, img
   border: 0
 
 address, caption, cite, code, dfn, th, var
-  font-style: normal
-  font-weight: normal
+  font:
+    style: normal
+    weight: normal
 
 caption, th
   text-align: left
 
 h1, h2, h3, h4, h5, h6
-  font-size: 100%
-  font-weight: normal
+  font:
+    size: 100%
+    weight: normal
 
 q
   &:before, &:after
@@ -31,9 +33,10 @@ sub
   vertical-align: text-bottom
 
 input, textarea, select
-  font-family: inherit
-  font-size: inherit
-  font-weight: inherit
+  font:
+    family: inherit
+    size: inherit
+    weight: inherit
 
 input, textarea, select
   *font-size: 100%
@@ -45,8 +48,9 @@ html
   height: 100%
   color: #252525
   background-color: #FFF
-  font-family: Arial, Geneva, "Helvetica Neue", Helvetica, sans-serif
-  font-size: 14px
+  font:
+    family: Arial, Geneva, "Helvetica Neue", Helvetica, sans-serif
+    size: 14px
 
 body
   width: 100%
@@ -56,8 +60,9 @@ body
 
 h1, h2, h3, h4, h5, h6
   color: #AA2222
-  font-size: 26px
-  font-weight: bold
+  font:
+    size: 26px
+    weight: bold
 
 h1
   font-size: 36px
@@ -83,22 +88,14 @@ a
   background-color: rgba(16, 16, 16, 0.4)
   position: absolute
   z-index: 1
-  -moz-border-radius: 15px
-  -webkit-border-radius: 15px
-  border-radius: 15px
-  -webkit-box-shadow: 0 0 20px #000
-  -moz-box-shadow: 0 0 20px #000
-  box-shadow: 0 0 20px #000
-  -moz-box-sizing: border-box
-  -webkit-box-sizing: border-box
-  -ms-box-sizing: border-box
-  box-sizing: border-box
-  -webkit-user-select: none
-  -moz-user-select: none
-  user-select: none
+  +border_radius(15px)
+  +box_shadow('0 0 20px #000')
+  +box_sizing
+  +user_select
   color: #3ee
-  font-weight: bold
-  font-size: 18px
+  font:
+    weight: bold
+    size: 18px
   text-shadow: 0 1px 1px #000
   &:hover
     background-color: rgba(16, 16, 16, 0.45)
@@ -114,28 +111,17 @@ a
   background-color: rgba(16, 16, 16, 0.4)
   position: absolute
   z-index: 1
-  -moz-border-radius: 24px
-  -webkit-border-radius: 24px
-  border-radius: 24px
-  -webkit-box-shadow: 0 0 10px #000
-  -moz-box-shadow: 0 0 10px #000
-  box-shadow: 0 0 10px #000
-  -moz-box-sizing: border-box
-  -webkit-box-sizing: border-box
-  -ms-box-sizing: border-box
-  box-sizing: border-box
+  +border_radius(24px)
+  +box_shadow('0 0 10px #000')
+  +box_sizing
   color: #3ee
   font-size: 16px
   text-shadow: 0 1px 1px #000
   input, button
-    -webkit-box-shadow: 0 0 10px #000 inset
-    -moz-box-shadow: 0 0 10px #000 inset
-    box-shadow: 0 0 10px #000 inset
+    +box_shadow('0 0 10px #000 inset')
     font-size: 17px
   input
-    -moz-border-radius: 14px
-    -webkit-border-radius: 14px
-    border-radius: 14px
+    +border_radius(14px)
     width: 300px
     height: 28px
     padding: 0 15px
@@ -144,23 +130,19 @@ a
     vertical-align: middle
     border: none
   button
-    -moz-border-radius: 16px
-    -webkit-border-radius: 16px
-    border-radius: 16px
+    +border_radius(16px)
+    +box_sizing
     height: 32px
     width: 32px
     color: #800
     background-color: #eff
     line-height: 26px
     vertical-align: middle
-    font-weight: bold
-    font-size: 17px
+    font:
+      weight: bold
+      size: 17px
     border: none
     cursor: pointer
-    -moz-box-sizing: border-box
-    -webkit-box-sizing: border-box
-    -ms-box-sizing: border-box
-    box-sizing: border-box
     text-indent: 0
     text-align: center
     text-overflow: ellipsis !important
@@ -169,24 +151,18 @@ a
     border: none
 
 button:hover
-  -webkit-box-shadow: 0 0 12px #000 inset
-  -moz-box-shadow: 0 0 12px #000 inset
-  box-shadow: 0 0 12px #000 inset
+  +box-shadow('0 0 12px #000 inset')
   color: #a22
 
 .search>div.fixer
   margin-top: 2px
-  -moz-border-radius: 14px
-  -webkit-border-radius: 14px
-  border-radius: 14px
+  +border_radius(14px)
   float: left
   width: auto
   height: auto
   overflow: hidden
   &.button
-    -moz-border-radius: 16px
-    -webkit-border-radius: 16px
-    border-radius: 16px
+    +border_radius(16px)
     margin-top: 0px
     margin-left: 3px
 
