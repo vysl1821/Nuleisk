@@ -1,9 +1,7 @@
-!!! Strict
-%html{ html_attrs("en_us") }
+!!! 5
+%html
   %head
-    %title
-      Fresh Merb App
-    %meta{ :content => "text/html; charset=utf-8", "http-equiv" => "content-type" }/
-    %link{ :href => "/stylesheets/master.css", :rel => "stylesheet", :media => "screen", :type => "text/css", :charset => "utf-8" }/
+    =partial ('layout/profile/head')
+    =partial ('layout/profile/javascripts')
   %body
-    = catch_content :for_layout
+  = catch_content :for_layout
