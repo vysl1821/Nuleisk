@@ -1,8 +1,21 @@
 :javascript
-  var time = #{ Time.now.to_i }
+
+  var timer = new Date(#{ Time.now.to_i })
+  var siteUrl = 'http://www.nuleisk.lt/'
+  var pause = 200
+
+  //var lastclick = ""
+  //var lat = 55.0000
+  //var lon = 24.359741
+  //var zoom = 0
+  //var map
+  //var searchPanel
+  //var geocoder
+  //var currentOverlay = null
   var poly;
+
  
-  function poly_init() {
+  function init_poly() {
 
     var polyOptions = {
       strokeColor: '#000000',
@@ -16,6 +29,7 @@
     google.maps.event.addListener(map, 'click', addLatLng);
   }
  
+
   /**
    * Handles click events on a map, and adds a new point to the Polyline.
    * @param {MouseEvent} mouseEvent

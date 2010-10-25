@@ -1,3 +1,5 @@
+var url_params
+
 $(document).ready(function() {
   var zoom = get_zoom()
   if (zoom < 7)
@@ -27,6 +29,10 @@ $(document).ready(function() {
   })
 
   $('input').focus()
-  poly_init()//
+  init_time()
+  init_poly()//
+
+  url_params = get_url_params()
+
 })
 
