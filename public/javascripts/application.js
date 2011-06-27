@@ -36,11 +36,13 @@ function gsearch( query ) {
   delete_overlays()
   geocoder.geocode( { 'address': query}, function(results, status) {
     if (status == google.maps.GeocoderStatus.OK) {
-      map.setCenter(results[0].geometry.location)
+      var new_bounds = results[0].geometry.bounds //for the centering
       $(results).each(function(ind, result){
+        if (ind > 0)
+          new_bounds = new_bounds.extend(result.geometry.location)
         marker = new google.maps.Marker({
             map: map, 
-            title: query,
+            title: result.formatted_address,
             position: result.geometry.location
         })
         elms.m.push( marker )
@@ -49,12 +51,14 @@ function gsearch( query ) {
         elms.iw.push( info_window )
         set_elevation( info_window, result.geometry.location )
       })
+      map.fitBounds(new_bounds)
       $('input').focus()
     } else {
       alert('No results found. ' + status)
     }
   })
 }
+
 
 function add_info_window( marker, content ){
   content = '<div id="info_window">' + content + '</div>'
@@ -111,6 +115,23 @@ function get_url_params(){
 		  urlParams[single[0]] = unescape(single[1])
   }
   return urlParams
+}
+
+function url_search(){
+  var href = document.location.href.replace(/%20/g, ' ')
+  var idents = (href.split("?", 2)[0]).split('/')
+  var emptyInd = idents.indexOf('')
+  while (emptyInd >= 0){//remove empty strings
+    idents.splice(emptyInd, 1)
+    emptyInd = idents.indexOf('')
+  }
+  var from = Math.max(idents.indexOf('nuleisk.local'), idents.indexOf('nuleisk.lt')) + 1
+  var search_str = idents.slice(from, idents.length).join(', ')
+  if (search_str.length > 0){
+    $('#search_input').attr('value', search_str)
+    gsearch( search_str )
+  }
+  return true
 }
 
 /* OLD FUNCTIONS */

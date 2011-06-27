@@ -33,12 +33,20 @@ task :merb_env do
   Merb.start_environment(:environment => init_env, :adapter => 'runner')
 end
 
-require 'spec/rake/spectask'
-require 'merb-core/test/tasks/spectasks'
-desc 'Default: run spec examples'
-task :default => 'spec'
+#require 'spec/rake/spectask'
+#require 'merb-core/test/tasks/spectasks'
+#desc 'Default: run spec examples'
+#task :default => 'spec'
 
 ##############################################################################
 # ADD YOUR CUSTOM TASKS IN /lib/tasks
 # NAME YOUR RAKE FILES file_name.rake
 ##############################################################################
+desc "Run at port 3455"
+task :run do
+  puts "merb -p 3455"
+  system "km"
+  system "echo -ne '\033]0;nuleisk\007'"
+  exec "merb -p 3455"
+end
+

@@ -33,6 +33,7 @@ $(document).ready(function() {
   init_poly()//
 
   url_params = get_url_params()
-
+  url_search()//search if searching with url
+  
 })
 

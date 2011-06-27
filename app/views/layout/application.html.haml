@@ -2,6 +2,6 @@
 %html{:xmlns => 'http://www.w3.org/1999/xhtml'}
   %head
     =partial ('layout/profile/head')
-    =partial ('layout/profile/javascripts')
+    =partial ('layout/profile/javascripts', :format => 'js')
   %body{ :style => "height:100%" }
     = catch_content :for_layout
