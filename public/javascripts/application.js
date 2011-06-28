@@ -125,7 +125,8 @@ function url_search(){
     idents.splice(emptyInd, 1)
     emptyInd = idents.indexOf('')
   }
-  var from = Math.max(idents.indexOf('nuleisk.local'), idents.indexOf('nuleisk.lt')) + 1
+  var from = Math.max(idents.indexOf('nuleisk.local'), idents.indexOf('nuleisk.lt'))
+  from = Math.max(from, idents.indexOf('www.nuleisk.lt')) + 1
   var search_str = idents.slice(from, idents.length).join(', ')
   if (search_str.length > 0){
     $('#search_input').attr('value', search_str)
